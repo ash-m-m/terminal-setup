@@ -100,12 +100,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-cd ~/Code
-git clone https://github.com/ash-m-m/terminal-setup 
-cd terminal-setup
+neofetch
+
+FILE=~/Code/terminal-setup
+if [ -d "$FILE" ]; then
+    cd ~/Code/terminal-setup
+    git pull
+    echo "terminal-setup updated."
+else
+    git clone https://github.com/ash-m-m/terminal-setup 
+    cd ~/Code/terminal-setup
+fi
 cp .zshrc ~/
 echo ".zshrc updated"
 
 
 # Aliases
-alias k=kubectl
+alias k=kubectl --short
+alias tf=terraform
+alias tg=terragrunt
+
+# Versions
+k version
+terraform version
+terragrunt --version
+aws --version 
+k9s version --short
+
+# Updates
+brew update
+
+clear

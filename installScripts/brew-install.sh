@@ -8,3 +8,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install iterm2
 brew install gh
 brew install wget
+brew install neofetch
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+brew install terragrunt
+brew install derailed/k9s/k9s
