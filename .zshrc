@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions sudo web-search copypath copyfile dirhistory history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,6 +119,8 @@ echo ".zshrc updated"
 alias k=kubectl --short
 alias tf=terraform
 alias tg=terragrunt
+alias src="exec zsh"
+alias c=clear
 
 # Versions
 k version
@@ -131,3 +133,20 @@ k9s version --short
 brew update
 
 clear
+
+# Tips for zsh plugins
+echo " \nTips for zsh plugins"
+echo " \nsudo plugin - escape key twice to automatically insert sudo before failed command."
+echo " \n{search engine} {search prompt} ex: google local weather."
+echo " \nCopypath plugin to copy the path to your current directory to the clipboard."
+echo " \ncopyfile to copy the contents of a file. Ex: copyfile helloworld.py"
+echo " \nCopybuffer - Ctrl + o to copy the currently typed command line."
+echo " \ndirhistory - ALT + Left/Right/Up/Down to navigate directory."
+echo " \n'src' to source zsh."
+
+cat << EOF
+\nh - prints your history
+hs [searchterm] - searches your history with grep
+hsi [serachterm] - same as above but case insensitive.
+EOF
+echo " \npp_json - Format json by pipping it into pp_json"
