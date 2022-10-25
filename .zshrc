@@ -72,6 +72,19 @@ ZSH_THEME="bira"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions sudo web-search copybuffer copypath copyfile dirhistory history)
 
+
+FILE=~/Code/terminal-setup
+if [ -d "$FILE" ]; then
+    cd ~/Code/terminal-setup
+    git pull
+    echo "terminal-setup updated."
+else
+    git clone https://github.com/ash-m-m/terminal-setup 
+    cd ~/Code/terminal-setup
+fi
+cp .zshrc ~/
+echo ".zshrc updated"
+cd ~/
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -102,25 +115,13 @@ source $ZSH/oh-my-zsh.sh
 
 neofetch
 
-FILE=~/Code/terminal-setup
-if [ -d "$FILE" ]; then
-    cd ~/Code/terminal-setup
-    git pull
-    echo "terminal-setup updated."
-else
-    git clone https://github.com/ash-m-m/terminal-setup 
-    cd ~/Code/terminal-setup
-fi
-cp .zshrc ~/
-echo ".zshrc updated"
-cd ~/
-
 # Aliases
 alias tf=terraform
 alias tg=terragrunt
 alias src="exec zsh"
 alias c=clear
 alias awssts="aws sts get-caller-identity"
+alias weather="google weather 07065"
 
 # Aliases for K8s
 alias k=kubectl --short
@@ -128,14 +129,15 @@ alias kgp="kubectl get pods -o wide"
 alias kgd="kubectl get deployments -o wide"
 
 # Versions
-k version
+kubectl version --client
 terraform version
 terragrunt --version
 aws --version 
 k9s version --short
 
 # Updates
-brew update
+brew update --auto-update
+brew upgrade 
 
 clear
 
@@ -147,12 +149,17 @@ echo " \nCopypath plugin to copy the path to your current directory to the clipb
 echo " \ncopyfile to copy the contents of a file. Ex: copyfile helloworld.py"
 echo " \nCopybuffer - Ctrl + o to copy the currently typed command line."
 echo " \ndirhistory - ALT + Left/Right/Up/Down to navigate directory."
-echo " \n'src' to source zsh."
+echo " \n'src' to source zsh.\n"
 
 cat << EOF
-\nh - prints your history
-hs [searchterm] - searches your history with grep
+h - prints your history.
+hs [searchterm] - searches your history with grep.
 hsi [serachterm] - same as above but case insensitive.
 EOF
-echo " \npp_json - Format json by pipping it into pp_json"
+echo " \npp_json - Format json by pipping it into pp_json."
+echo " \nfuzzy search: find {name} -type f | fzf > selected."
+echo " \nkubectx for k8 context and ns switching. Use kubectx or kubens."
+echo " \nStern allows you to tail multiple pods on Kubernetes and multiple containers within the pod: stern pod-query [flags]."
+echo " \nSilver Searcher (better than ack). To use: ag {serach}."
 
+cd ~/Code

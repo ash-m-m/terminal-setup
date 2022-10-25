@@ -14,3 +14,7 @@ brew install hashicorp/tap/terraform
 brew install terragrunt
 brew install derailed/k9s/k9s
 brew install tmux
+brew install fzf
+brew install stern
+brew install the_silver_searcher
+brew install kubectx
