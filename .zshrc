@@ -136,8 +136,8 @@ aws --version
 k9s version --short
 
 # Updates
-brew update --auto-update
-brew upgrade 
+# brew update --auto-update
+# brew upgrade 
 
 clear
 
