@@ -113,7 +113,7 @@ else
 fi
 cp .zshrc ~/
 echo ".zshrc updated"
-
+cd ~/
 
 # Aliases
 alias k=kubectl --short
@@ -150,3 +150,7 @@ hs [searchterm] - searches your history with grep
 hsi [serachterm] - same as above but case insensitive.
 EOF
 echo " \npp_json - Format json by pipping it into pp_json"
+
+
+
+src

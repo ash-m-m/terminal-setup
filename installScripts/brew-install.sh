@@ -13,3 +13,4 @@ brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 brew install terragrunt
 brew install derailed/k9s/k9s
+brew install tmux
