@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions sudo web-search copypath copyfile dirhistory history)
+plugins=(git zsh-autosuggestions sudo web-search copybuffer copypath copyfile dirhistory history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,11 +116,16 @@ echo ".zshrc updated"
 cd ~/
 
 # Aliases
-alias k=kubectl --short
 alias tf=terraform
 alias tg=terragrunt
 alias src="exec zsh"
 alias c=clear
+alias awssts="aws sts get-caller-identity"
+
+# Aliases for K8s
+alias k=kubectl --short
+alias kgp="kubectl get pods -o wide"
+alias kgd="kubectl get deployments -o wide"
 
 # Versions
 k version
@@ -151,6 +156,3 @@ hsi [serachterm] - same as above but case insensitive.
 EOF
 echo " \npp_json - Format json by pipping it into pp_json"
 
-
-
-src
