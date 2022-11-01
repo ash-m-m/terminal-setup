@@ -162,4 +162,6 @@ echo " \nkubectx for k8 context and ns switching. Use kubectx or kubens."
 echo " \nStern allows you to tail multiple pods on Kubernetes and multiple containers within the pod: stern pod-query [flags]."
 echo " \nSilver Searcher (better than ack). To use: ag {serach}."
 
+echo " \nTo start docker (without docker engine), run 'colima start'"
+
 cd ~/Code
