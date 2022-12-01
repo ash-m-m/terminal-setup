@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+current_path=$(pwd)
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -163,3 +163,5 @@ echo " \nStern allows you to tail multiple pods on Kubernetes and multiple conta
 echo " \nSilver Searcher (better than ack). To use: ag {serach}."
 
 echo " \nTo start docker (without docker engine), run 'colima start'"
+
+cd $current_path
