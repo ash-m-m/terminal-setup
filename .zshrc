@@ -163,5 +163,3 @@ echo " \nStern allows you to tail multiple pods on Kubernetes and multiple conta
 echo " \nSilver Searcher (better than ack). To use: ag {serach}."
 
 echo " \nTo start docker (without docker engine), run 'colima start'"
-
-cd ~/Code
