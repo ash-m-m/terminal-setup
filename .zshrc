@@ -122,6 +122,7 @@ alias src="exec zsh"
 alias c=clear
 alias awssts="aws sts get-caller-identity"
 alias weather="google weather 07065"
+alais vim=nvim
 
 # Aliases for K8s
 alias k=kubectl --short
